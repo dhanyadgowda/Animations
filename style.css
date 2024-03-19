@@ -1,0 +1,110 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+.btn{
+    padding: 16px 22px;
+    border-radius: 12px;
+    border: none;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+}
+.btn:hover{
+    background-color: purple;
+    font-size: 32px;
+    /* margin: 32px auto; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.demo{
+    margin: 12px;
+    width: 90px;
+    height: 80px;
+    background-color: rgb(157, 43, 172);
+    animation-name: anime;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-direction: alternate;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+@keyframes anime{
+    from{}
+    to{
+        margin-left: calc(100% - 80px);
+        transform: rotate(360deg);
+        background-color: brown;
+        border-radius: 50%;
+    }
+}
+.section{
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+}
+.loader{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid lightgray;
+    border-top: 2px solid rgba(0, 0, 0, 0.404);
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,50%); */
+    animation-name: msd;
+    animation-duration: 1.2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes msd{
+    0%{border-top: 2px solid brown; transform: rotate(0deg);}
+    50%{border-top: 2px solid black; transform: rotate(180deg);}
+    100%{border-top: 2px solid purple; transform: rotate(360deg);}
+}
+.main{
+    overflow: hidden;
+}
+.cards{
+    width: 2170px;
+    margin-top: 20px;
+    display: flex;
+    gap: 30px;
+    /* overflow-x: auto; */
+    animation-name: card;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes card{
+    0%{}
+    100%{
+        transform: translate(-100%);
+    }
+}
+.cards::-webkit-scrollbar{
+    display: none;
+}
+.card-img{
+    width: 260px;
+    height: 330px;
+    background-color: purple;
+    flex-shrink: 0;
+    border-radius: 24px;
+    overflow: hidden;
+}
+.img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.tint{
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(51.91%, transparent), color-stop(75.88%, rgba(0, 0, 0, 0.3)));
+    background: linear-gradient(180deg, transparent 51.91%, rgba(0, 0, 0, 0.3) 75.88%);
+}
